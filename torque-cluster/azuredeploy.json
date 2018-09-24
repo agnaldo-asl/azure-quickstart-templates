@@ -132,7 +132,7 @@
   "variables": {
     "imagePublisher": "OpenLogic",
     "imageOffer": "Ubuntu",
-    "ubuntuOSVersion": "16.06",
+    "ubuntuOSVersion": "16.04",
     "vmStorageAccountContainerName": "vhd",
     "OSDiskName": "osdisk",
     "publicIPAddressType": "Dynamic",
