@@ -47,8 +47,8 @@ if ! [ -f /home/$ADMIN_USERNAME/.ssh/id_rsa ]; then
 fi
 
 # Install sshpass to automate ssh-copy-id action
-sudo yum install -y epel-release >> /tmp/azuredeploy.log.$$ 2>&1
-sudo yum install -y sshpass >> /tmp/azuredeploy.log.$$ 2>&1
+sudo apt-get install -y epel-release >> /tmp/azuredeploy.log.$$ 2>&1
+sudo apt-get install -y sshpass >> /tmp/azuredeploy.log.$$ 2>&1
 
 # Loop through all worker nodes, update hosts file and copy ssh public key to it
 # The script make the assumption that the node is called %WORKER+<index> and have
@@ -68,7 +68,7 @@ done
 ################
 
 # Prep packages
-sudo -S yum install -y libtool openssl-devel libxml2-devel boost-devel gcc gcc-c++ >> /tmp/azuredeploy.log.$$ 2>&1
+sudo apt-get install -y libtool openssl-devel libxml2-devel boost-devel gcc gcc-c++ >> /tmp/azuredeploy.log.$$ 2>&1
 
 # Download the source package
 cd /tmp >> /tmp/azuredeploy.log.$$ 2>&1

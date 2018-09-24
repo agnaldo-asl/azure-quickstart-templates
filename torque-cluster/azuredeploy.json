@@ -131,14 +131,14 @@
   },
   "variables": {
     "imagePublisher": "OpenLogic",
-    "imageOffer": "CentOS",
-    "ubuntuOSVersion": "6.6",
+    "imageOffer": "Ubuntu",
+    "ubuntuOSVersion": "16.06",
     "vmStorageAccountContainerName": "vhd",
     "OSDiskName": "osdisk",
     "publicIPAddressType": "Dynamic",
     "publicIPAddressName": "publicips",
-    "masterVMName": "master",
-    "workerVMName": "worker",
+    "masterVMName": "Cluster-master",
+    "workerVMName": "Cluster-node",
     "nicName": "nic",
     "networkSettings": {
       "virtualNetworkName": "virtualnetwork",
@@ -161,7 +161,7 @@
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('networkSettings').virtualNetworkName)]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('networkSettings').subnet.dse.name)]",
     "sshKeyPath": "[concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]",
-    "templateBaseUrl": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/torque-cluster/",
+    "templateBaseUrl": "https://github.com/agnaldo-asl/azure-quickstart-templates/tree/master/torque-cluster/",
     "installationCLI": "[concat('sh azuredeploy.sh ', variables('masterVMName'), ' ', variables('networkSettings').statics.master, ' ', variables('workerVMName'), ' ', variables('networkSettings').statics.workerRange.base, ' ', variables('networkSettings').statics.workerRange.start, ' ', parameters('scaleNumber'), ' ', parameters('adminUsername'), ' ', parameters('adminPassword'), ' ', variables('templateBaseUrl'))]",
     "storageAccountType": "Standard_LRS"
   },
